@@ -1,5 +1,4 @@
 import re
-import sys
 
 DIGITS = [
     "zero",
@@ -106,4 +105,5 @@ def main(data_path: str):
 
 
 if __name__ == "__main__":
+    import sys
     main(data_path=sys.argv[1])
