@@ -1,6 +1,5 @@
 import re
-from pathlib import Path
-
+import sys
 
 DIGITS = [
     "zero",
@@ -76,20 +75,35 @@ def calibration_sum(lines: str, pattern: str) -> int:
     return sum
 
 
-def main():
+def part_1(data: str):
+    """
+    Executes part 1 of the challenge.
+    """
+
+    return calibration_sum(data, PATTERN_PART_1)
+
+
+def part_2(data: str):
+    """
+    Executes part 2 of the challenge.
+    """
+
+    return calibration_sum(data, PATTERN_PART_2)
+
+
+def main(data_path: str):
     """
     Reads a file containing calibration values, calculates the sum of the values
     using different patterns, and prints the results.
     """
 
-    path = Path(__file__).resolve().parent / "input" / "day01.txt"
-
-    lines = path.read_text().strip()
+    with open(data_path, "r") as f:
+        data = f.read().strip()
 
     print("Sum of calibration values:")
-    print(f"• Part 1: {calibration_sum(lines, PATTERN_PART_1)}")
-    print(f"• Part 2: {calibration_sum(lines, PATTERN_PART_2)}")
+    print(f"• Part 1: {part_1(data)}")
+    print(f"• Part 2: {part_2(data)}")
 
 
 if __name__ == "__main__":
-    main()
+    main(data_path=sys.argv[1])
