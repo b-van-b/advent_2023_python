@@ -76,7 +76,12 @@ def calibration_sum(lines: str, pattern: str) -> int:
     return sum
 
 
-if __name__ == "__main__":
+def main():
+    """
+    Reads a file containing calibration values, calculates the sum of the values
+    using different patterns, and prints the results.
+    """
+
     path = Path(__file__).resolve().parent / "input" / "day01.txt"
 
     lines = path.read_text().strip()
@@ -84,3 +89,7 @@ if __name__ == "__main__":
     print("Sum of calibration values:")
     print(f"• Part 1: {calibration_sum(lines, PATTERN_PART_1)}")
     print(f"• Part 2: {calibration_sum(lines, PATTERN_PART_2)}")
+
+
+if __name__ == "__main__":
+    main()
