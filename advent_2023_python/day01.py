@@ -106,4 +106,7 @@ def main(data_path: str):
 
 if __name__ == "__main__":
     import sys
+    if len(sys.argv) != 2:
+        print(f"Usage: {sys.argv[0]} DATA_PATH")
+        sys.exit(1)
     main(data_path=sys.argv[1])
