@@ -161,7 +161,7 @@ def main(data_path: str):
     with open(data_path, "r") as f:
         data = f.read().strip()
 
-    print("Sum of calibration values:")
+    print("Cube Conundrum results:")
     print(f"• Part 1: {part_1(data)}")
     print(f"• Part 2: {part_2(data)}")
 
